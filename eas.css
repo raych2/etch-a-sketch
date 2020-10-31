@@ -1,0 +1,30 @@
+body {
+    box-sizing: border-box;
+    margin: 25px auto;
+    background-color: #ccc;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+}
+
+.title {
+    font-size: 3em;
+}
+
+button {
+    padding: 5px;
+    margin: 20px auto;
+    border-radius: 2px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.container {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+.blank {
+    background-color:white;
+    border: 1px solid gray;
+}

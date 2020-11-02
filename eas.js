@@ -3,6 +3,7 @@ const originalGrid = 16;
 let newGrid = document.querySelector('#resize');
 let blankGrid = document.querySelector('#reset');
 let blackSquare = document.querySelector('#black');
+let shadeSquare = document.querySelector('#shade');
 let colorfulSquare = document.querySelector('#random');
 let playerInput;
 let cellNumber;
@@ -28,9 +29,11 @@ function clearGrid() {
     }
 }
 
-function generateRandomColor() {
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    return `#${randomColor}`;
+function generateRandomColor(min = 0, max = 255) {
+    let r = Math.floor(Math.random() * (max - min + 1) + min);
+    let g = Math.floor(Math.random() * (max - min + 1) + min);
+    let b = Math.floor(Math.random() * (max - min + 1) + min);
+    return `rgb(${r},${g},${b})`;
 }
 
 function createGrid(number) {
@@ -48,7 +51,7 @@ function createGrid(number) {
     let squares = document.querySelectorAll('.blank');
     squares.forEach(blankSquare => {
         blankSquare.addEventListener('mouseover', function (e) {
-            blankSquare.style.backgroundColor = '#000000';
+            blankSquare.style.backgroundColor = 'rgb(0,0,0)';
         });
     });
 }
@@ -63,7 +66,18 @@ blackSquare.addEventListener('click', function (e) {
     let gridCells = document.querySelectorAll('.blank');
     gridCells.forEach((cell) => {
         cell.addEventListener('mouseover', function(e) {
-            cell.style.backgroundColor = '#000000';
+            cell.style.backgroundColor = 'rgb(0,0,0)';
+        });
+    });
+});
+
+shadeSquare.addEventListener('click', function (e) {
+    let gridCells = document.querySelectorAll('.blank');
+    gridCells.forEach((cell) => {
+        let originalShade = 255;
+        cell.addEventListener('mouseover', function(e) {
+            originalShade -= 25;
+            cell.style.backgroundColor = `rgb(${originalShade},${originalShade},${originalShade})`;
         });
     });
 });

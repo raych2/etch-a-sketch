@@ -1,7 +1,7 @@
 body {
     box-sizing: border-box;
     margin: 25px auto;
-    background-color: #ccc;
+    background-image: linear-gradient(to bottom, #bdd9bf, #86A8E7, #5FFBF1);
     text-align: center;
 }
 
@@ -12,8 +12,8 @@ body {
 
 button {
     padding: 5px;
-    margin: 20px auto;
-    border-radius: 2px;
+    margin: 20px 10px;
+    border-radius: 5px;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1rem;
     cursor: pointer;
@@ -23,9 +23,14 @@ button {
     height: 500px;
     width: 500px;
     margin: 0 auto;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0px 6px 20px 3px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 0px 6px 20px 3px rgba(0,0,0,0.69);
+    -moz-box-shadow: 0px 6px 20px 3px rgba(0,0,0,0.69);
   }
   
 .blank {
     background-color:white;
-    border: 1px solid gray;
+    border: 1px solid #DCDCDC;
 }
